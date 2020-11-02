@@ -7,6 +7,7 @@ import FaceRecognition from './components/facerecognition/FaceRecognition';
 import Rank from './components/rank/Rank';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
+import {config} from './config';
 import './App.css';
 
 const particlesOptions = {
@@ -80,7 +81,7 @@ class App extends Component{
     this.setState({imageUrl : this.state.input});
 
     let resok = true;
-    fetch('http://localhost:4000/imageUrl',{
+    fetch(`${config.url}/imageUrl`,{
       method: 'POST',
       headers: {
         'Content-Type' : 'application/json'
@@ -93,7 +94,7 @@ class App extends Component{
     })
     .then(res => {
       if(resok){
-        fetch('http://localhost:4000/image',{
+        fetch(`${config.url}/image`,{
           method : 'PUT',
           headers : {
             'Content-Type' : 'application/json'

@@ -1,4 +1,5 @@
 import React from 'react';
+import {config} from '../../config';
 
 class Register extends React.Component{
 	constructor(props){
@@ -30,7 +31,7 @@ class Register extends React.Component{
 
 	onSubmitRegister = () => {
 		let resok = true;
-		fetch('http://localhost:4000/register',{
+		fetch(`${config.url}/register`,{
 			method : 'POST',
 			headers : {
 				'Content-Type' : 'application/json'

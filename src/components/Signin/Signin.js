@@ -1,4 +1,5 @@
 import React from 'react';
+import {config} from '../../config';
 
 class Signin extends React.Component{
 	constructor(props){
@@ -23,7 +24,7 @@ class Signin extends React.Component{
 
 	onSubmitSignIn = () => {
 		let resok = true;
-		fetch('http://localhost:4000/signin',{
+		fetch(`${config.url}/signin`,{
 			method : 'post',
 			headers: {
 				'Content-Type' : 'application/json'
